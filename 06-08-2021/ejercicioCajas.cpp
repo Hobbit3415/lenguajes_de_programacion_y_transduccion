@@ -1,5 +1,8 @@
+//Biblioteca basica para trabajar en c++
 #include <iostream>
+//Biblioteca de pilas
 #include <stack>
+//Biblioteca que contiene el metodo rand()
 #include <stdlib.h>
 using namespace std;
 
