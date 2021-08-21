@@ -10,13 +10,14 @@ int main()
   system("cls");
 
   stack <char> parentesis;
-
   string expresion = "";
+
   cout << "Digite la expresion que desea validar (sin espacios): " << endl;
   cin >> expresion;
   bool esCorrecta = false;
 
   char arr[expresion.length()];
+  
   //Convertir String a array de Char
   for (int i = 0; i < sizeof(arr); i++)
   {
@@ -31,18 +32,18 @@ int main()
     }else if(arr[i] == ')'){
       parentesis.pop();
     }
+
     //Validacion de signos mal escritos
     if (arr[i] == '=')
     {
       // a+b=+c es correcto
       // a+b=-c es correcto
       // a+b+=c no es correcto
-
-      /*if (arr[i + 1] == '+' || arr[i + 1] == '-' || arr[i + 1] == '*' || arr[i + 1] == '/' || arr[i + 1] == ';')
+      if (arr[i + 1] == '*' || arr[i + 1] == '/')
       {
         esCorrecta = false;
       }
-      else*/if (arr[i - 1] == '+' || arr[i - 1] == '-' || arr[i - 1] == '*' || arr[i - 1] == '/' || arr[i - 1] == ';')
+      else if (arr[i - 1] == '+' || arr[i - 1] == '-' || arr[i - 1] == '*' || arr[i - 1] == '/')
       {
         esCorrecta = false;
       }else{
