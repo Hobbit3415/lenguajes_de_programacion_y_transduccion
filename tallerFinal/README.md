@@ -1,11 +1,11 @@
 # Taller final
 1.   Complementar el programa de arboles que se vienen realizando, con los siguientes puntos.
-  a.   Indicar cuantos niveles tiene su árbol
-  b.   Cual es el peso total
-  c.    Determinar el número de ramas
-  d.   Determinar el número de hojas
-  e.   Indicar si el árbol binario es perfecto o no perfecto
-  f.    Incluir los recorridos Preorden, InOrden y PostOrden
+  a. Indicar cuantos niveles tiene su árbol
+  b. Cual es el peso total
+  c. Determinar el número de ramas
+  d. Determinar el número de hojas
+  e. Indicar si el árbol binario es perfecto o no perfecto
+  f. Incluir los recorridos Preorden, InOrden y PostOrden
 
 2. Salida de Pasajeros de un Bus de Transmilenio en el Portal
   Se requiere crear un programa que controle la salida de los pasajeros de un Transmilenio en el portal, el cual será representado por una cola.
