@@ -172,8 +172,6 @@ string arbolPerfecto()
 
 int numeroRamas(NodoA *arbol)
 {
-  int nRamas = 0;
-
   if (arbol == NULL)
   {
     return 0;
@@ -181,39 +179,34 @@ int numeroRamas(NodoA *arbol)
   else
   {
 
-    if (arbol->der != NULL || arbol->izq != NULL)    {
-      nRamas = numeroRamas(arbol->der);
-      nRamas = numeroRamas(arbol->izq);
+    if (arbol->der == NULL && arbol->izq == NULL)
+    {
+      return 0;
     }
-
+    else
+    {
+      return 1 + (numeroRamas(arbol->der) + numeroRamas(arbol->izq));
+    }
   }
-  
-  return nRamas+1;
 }
 
-int numeroHojas(NodoA *arbol){
-  int nHojas = 0;
-
-  if (arbol->der == NULL || arbol->izq == NULL)    {
-      nHojas = numeroRamas(arbol->der)+1;
-    }
-
-    if (arbol->der == NULL || arbol->izq == NULL)    {
-      nHojas = numeroRamas(arbol->der)+1;
-    }
-  /*
+int numeroHojas(NodoA *arbol)
+{
   if (arbol == NULL)
   {
     return 0;
   }
   else
   {
-
-    
-
+    if (arbol->der != NULL && arbol->izq != NULL)
+    {
+      return (numeroHojas(arbol->izq) + numeroHojas(arbol->der));
+    }
+    else
+    {
+      return 1;
+    }
   }
-  */
-  return nHojas;
 }
 
 int main()
