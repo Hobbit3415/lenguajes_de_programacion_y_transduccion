@@ -198,9 +198,13 @@ int numeroHojas(NodoA *arbol)
   }
   else
   {
-    if (arbol->der != NULL && arbol->izq != NULL)
+    if (arbol->der != NULL)
     {
-      return (numeroHojas(arbol->izq) + numeroHojas(arbol->der));
+      return numeroHojas(arbol->der)+numeroHojas(arbol->izq);
+    }
+    else if (arbol->izq != NULL)
+    {
+      return numeroHojas(arbol->izq)+numeroHojas(arbol->der);
     }
     else
     {
