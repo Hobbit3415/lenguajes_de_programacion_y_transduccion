@@ -27,11 +27,12 @@ NodoA *crearNodos(int d)
 
 void menu()
 {
-  //system("cls");
+  system("cls");
+  cout << "*******************************" << endl;
   cout << "** Operaciones Arbol Binario **" << endl;
   cout << "1. Insertar nodo\n2. Info. del arbol\n3. Mostrar In Orden" << endl;
   cout << "4. Mostrar Pre Orden\n5. Mostrar Post Orden\n6. Salir" << endl;
-  cout << "Ingrese una opcion..." << endl;
+  cout << "*******************************" << endl;
 }
 
 void insertar(NodoA *&arbol, int d)
@@ -225,46 +226,55 @@ int main()
     switch (opcion)
     {
     case 1:
-      //system("cls");
+      system("cls");
+      cout << "*************************" << endl;
       cout << "Ingrese el elemento que va a almacenar en el arbol: " << endl;
       cin >> dato;
       insertar(arbol, dato);
       break;
 
     case 2:
-      //system("cls");
-      cout << "** Arbol binario **" << endl;
+      system("cls");
+      cout << "*************************" << endl;
+      cout << "***** Arbol binario *****" << endl;
       mostrar(arbol, contador);
-      cout << "*******************" << endl;
-      cout << "* Peso del arbol: " << peso << endl;
-      cout << "* Nivel del arbol: " << mostrarNiveles(arbol) << endl;
+      cout << "*************************" << endl;
       cout << "* " << arbolPerfecto() << endl;
+      cout << "* Peso del arbol:  " << peso << endl;
+      cout << "* Nivel del arbol: " << mostrarNiveles(arbol) << endl;
       cout << "* Numero de ramas: " << numeroRamas(arbol) << endl;
       cout << "* Numero de hojas: " << numeroHojas(arbol) << endl;
-
+      cout << "*************************" << endl;
+      cout << endl;
       system("pause");
       break;
 
     case 3:
-      //system("cls");
+      system("cls");
+      cout << "*************************" << endl;
       cout << "** In Orden **" << endl;
       inOrden(arbol);
+      cout << "\n*************************" << endl;
       cout << endl;
       system("pause");
       break;
 
     case 4:
-      //system("cls");
+      system("cls");
+      cout << "*************************" << endl;
       cout << "** Pre Orden **" << endl;
       preOrden(arbol);
+      cout << "\n*************************" << endl;
       cout << endl;
       system("pause");
       break;
 
     case 5:
-      //system("cls");
+      system("cls");
+      cout << "*************************" << endl;
       cout << "** Post Orden **" << endl;
       postOrden(arbol);
+      cout << "\n*************************" << endl;
       cout << endl;
       system("pause");
       break;
