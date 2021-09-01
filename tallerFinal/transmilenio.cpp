@@ -20,7 +20,7 @@ void cargarBus()
   }
   else
   {
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 30; i++)
     {
       bus.push(1);
     }
@@ -86,10 +86,8 @@ void retirarTor()
   }
   else if (torniquete2.size() < 3)
   {
-    system("cls");
     torniquete2.pop();
     fueraDelSistema.push(1);
-    system("pause");
   }
 
   system("cls");
@@ -147,6 +145,10 @@ int main(int argc, char const *argv[])
       break;
     case 4:
       mostrarEstado();
+      break;
+
+    case 5:
+      continuar = false;
       break;
 
     default:
