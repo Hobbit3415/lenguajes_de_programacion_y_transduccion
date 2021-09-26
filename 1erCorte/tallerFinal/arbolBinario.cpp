@@ -5,7 +5,6 @@ bool seguir = true;
 bool esPerfecto = false;
 int contadorNiveles = 1;
 int peso = 0;
-//int nRamas = 0;
 
 struct NodoA
 {
@@ -24,7 +23,9 @@ NodoA *crearNodos(int d)
   nnodo->izq = NULL;
   return nnodo;
 }
-
+/**
+ * Metodo que imprime por pantalla el menu principal
+ **/
 void menu()
 {
   system("cls");
@@ -41,11 +42,13 @@ void insertar(NodoA *&arbol, int d)
   {
     NodoA *nnodo = crearNodos(d);
     arbol = nnodo;
+    //Aumenta el peso del arbol cada vez que se agrega un nodo
     peso += 1;
   }
   else
   {
     int valorRaiz = arbol->dato;
+    //Agrega el nodo a la izquierda o a la derecha
     if (d < valorRaiz)
     {
       insertar(arbol->izq, d);
@@ -56,7 +59,9 @@ void insertar(NodoA *&arbol, int d)
     }
   }
 }
-
+/**
+ * Metodo que muestra por pantalla el arbol
+ **/
 void mostrar(NodoA *arbol, int cont)
 {
   if (arbol == NULL)
@@ -75,7 +80,9 @@ void mostrar(NodoA *arbol, int cont)
     mostrar(arbol->izq, cont + 1);
   }
 }
-
+/**
+ * Metodo imprime el arbol en InOrden
+ **/
 void inOrden(NodoA *arbol)
 {
   if (arbol == NULL)
@@ -90,7 +97,9 @@ void inOrden(NodoA *arbol)
     inOrden(arbol->der);
   }
 }
-
+/**
+ * Metodo imprime el arbol en PreOrden
+ **/
 void preOrden(NodoA *arbol)
 {
   if (arbol == NULL)
@@ -105,7 +114,9 @@ void preOrden(NodoA *arbol)
     preOrden(arbol->der);
   }
 }
-
+/**
+ * Metodo imprime el arbol en PostOrden
+ **/
 void postOrden(NodoA *arbol)
 {
   if (arbol == NULL)
@@ -124,31 +135,32 @@ void postOrden(NodoA *arbol)
 int mostrarNiveles(NodoA *arbol)
 {
   int alturaIzq = 0, alturaDer = 0;
-  //Nodo terminal
+  //Si el nodo es un nodo terminal, retorne 0
   if (arbol->izq == NULL && arbol->der == NULL)
   {
     return 0;
   }
-
+  //Si el nodo derecho no es nulo, retorne la altura derecha
   if (arbol->der != NULL)
   {
     alturaDer = mostrarNiveles(arbol->der);
   }
-
+  //Si el nodo izquierdo no es nulo, retorne la altura izquierda
   if (arbol->izq != NULL)
   {
     alturaIzq = mostrarNiveles(arbol->izq);
   }
-
+  /*Si la altura izquierda es igual a la altura derecha,
+  el arbol es perfecto*/
   if (alturaDer == alturaIzq)
   {
     esPerfecto = true;
-  }
+  }P
   else
   {
     esPerfecto = false;
   }
-
+  /*Si la altura derecha es mayor a la izquierda, retorne esa*/
   if (alturaDer > alturaIzq)
   {
     return alturaDer + 1;
