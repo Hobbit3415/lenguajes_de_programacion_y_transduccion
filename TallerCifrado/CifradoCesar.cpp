@@ -28,6 +28,7 @@ void convertir_ascii_a_texto(string str, long len)
     //Checkea el rango de caracteres ASCII
     if (num > 31 && num < 255)
     {
+      //Caracter 127 no existe
       if (num == 127)
       {
         char ch = '~';
@@ -118,7 +119,6 @@ void menu()
 
 int main(int argc, char const *argv[])
 {
-  system("cls");
   string mensaje_cifrado = "";
   string mensaje_descifrado = "";
   long len = 0;
@@ -180,22 +180,6 @@ int main(int argc, char const *argv[])
       break;
     }
   } while (continuar);
-  /*
-  convertir_ascii_a_texto(mensajeAscii, len);
 
-  cout << "\nMensaje cifrado en texto: " << endl;
-  len = mensaje_cifrado.length();
-  convertir_ascii_a_texto(mensaje_cifrado, len);
-  cout << endl;
-
-  cout << "Mensaje descifrado:" << endl;
-  mensaje_descifrado = descifrarMensaje(mensaje_cifrado, len);
-  cout << mensaje_descifrado << endl;
-
-  cout << "\nMensaje descifrado en texto: " << endl;
-  len = mensaje_descifrado.length();
-  convertir_ascii_a_texto(mensaje_descifrado, len);
-  cout << endl;
-*/
   return 0;
 }
